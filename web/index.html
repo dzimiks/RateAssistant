@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Jednostavna forma</title>
+    <title>Rate Assistant</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -9,22 +9,22 @@
 </head>
 <body>
 
-<div id="page-wrap">
-    <h1>Jednostavna forma</h1>
+<div class="page-wrap">
+    <h1>Rate Assistant</h1>
 
     <div id="contact-area">
+        <form method="post" action="http://localhost:8080/rate">
+            <label for="firstName">First name:</label>
+            <input type="text" name="firstName" id="firstName"/>
 
-        <form method="post" action="http://localhost:8080/ser1">
-            <label for="Ime">Ime:</label>
-            <input type="text" name="ime" id="ime"/>
+            <label for="lastName">Last name:</label>
+            <input type="text" name="lastName" id="lastName"/>
 
-            <label for="Prezime">Prezime:</label>
-            <input type="text" name="prezime" id="prezime"/>
+            <label for="rating">Rating:</label>
+            <input type="number" name="rating" id="rating"/>
 
-            <input type="submit" name="submit" value="Potvrda" class="submit-button"/>
+            <input type="submit" name="submit" value="Submit" class="submit-button"/>
         </form>
-
-        <div style="clear: both;"></div>
     </div>
 </div>
 

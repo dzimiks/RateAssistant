@@ -13,7 +13,7 @@ p {
     margin-bottom: 15px;
 }
 
-#page-wrap {
+.page-wrap {
     width: 660px;
     background: white;
     padding: 20px 50px 20px 50px;
@@ -56,4 +56,28 @@ label {
     width: 100px;
     padding-top: 5px;
     font-size: 1.4em;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.button-success {
+    padding: 10px;
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(28, 184, 65);
 }
