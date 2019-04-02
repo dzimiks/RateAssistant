@@ -32,9 +32,9 @@ public class ServletForm extends HttpServlet {
 
         out.println("<head><title>Ratings</title><meta charset=\"UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"/></head>");
         out.println("<body><div class=\"page-wrap\"><h1>Your rating:</h1><br>");
-        out.println("<p>First name: <strong>" + firstName.toUpperCase() + "</strong></p><br>");
-        out.println("<p>Last name: <strong>" + lastName.toUpperCase() + "</strong></p><br>");
-        out.println("<p>Rating: <strong>" + rating + "</strong></p><br>");
+        out.println("<p>First name: <strong>" + firstName.toUpperCase() + "</strong></p>");
+        out.println("<p>Last name: <strong>" + lastName.toUpperCase() + "</strong></p>");
+        out.println("<p>Rating: <strong>" + rating + "</strong></p>");
         out.println("<a href=\"rate\"><button class=\"button-success\">See all ratings</button></a>");
         out.println("</div></body>");
         out.close();
@@ -66,7 +66,7 @@ public class ServletForm extends HttpServlet {
                 sum += rating;
             }
 
-            double avgRating = sum / (size);
+            double avgRating = sum / size;
             out.println("<tr><td>" + assistant.getFirstName() + " " + assistant.getLastName() + "</td><td>" + avgRating + "</td></tr>");
         }
 
