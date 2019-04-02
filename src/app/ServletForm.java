@@ -26,10 +26,14 @@ public class ServletForm extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
+        if (firstName.toUpperCase().equals(Constants.FORBIDDEN_NAME)) {
+            rating = 0;
+        }
+
         out.println("<head><title>Ratings</title><meta charset=\"UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"/></head>");
-        out.println("<body><div class=\"page-wrap\"><h1>Review successfully saved:</h1><br>");
-        out.println("<p>First name: <strong>" + firstName + "</strong></p><br>");
-        out.println("<p>Last name: <strong>" + lastName + "</strong></p><br>");
+        out.println("<body><div class=\"page-wrap\"><h1>Your rating:</h1><br>");
+        out.println("<p>First name: <strong>" + firstName.toUpperCase() + "</strong></p><br>");
+        out.println("<p>Last name: <strong>" + lastName.toUpperCase() + "</strong></p><br>");
         out.println("<p>Rating: <strong>" + rating + "</strong></p><br>");
         out.println("<a href=\"rate\"><button class=\"button-success\">See all ratings</button></a>");
         out.println("</div></body>");
