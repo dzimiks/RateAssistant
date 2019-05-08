@@ -9,25 +9,25 @@ import java.util.List;
 
 public class Memory {
 
-    private List<Review> reviews;
+	private List<Review> reviews;
 
-    public Memory() {
-        this.reviews = new ArrayList<>();
-    }
+	public Memory() {
+		this.reviews = new ArrayList<>();
+	}
 
-    public List<Review> getReviews() {
-        return reviews;
-    }
+	public List<Review> getReviews() {
+		return reviews;
+	}
 
-    public void addReview(Review review) {
-        Assistant assistant = review.getAssistant();
-        assistant.setFirstName(assistant.getFirstName().toUpperCase());
-        assistant.setLastName(assistant.getLastName().toUpperCase());
+	public synchronized void addReview(Review review) {
+		Assistant assistant = review.getAssistant();
+		assistant.setFirstName(assistant.getFirstName().toUpperCase());
+		assistant.setLastName(assistant.getLastName().toUpperCase());
 
-        if (assistant.getFirstName().equals(Constants.FORBIDDEN_NAME)) {
-            review.setRating(0);
-        }
+		if (assistant.getFirstName().equals(Constants.FORBIDDEN_NAME)) {
+			review.setRating(0);
+		}
 
-        reviews.add(review);
-    }
+		reviews.add(review);
+	}
 }
